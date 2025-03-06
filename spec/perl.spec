@@ -1996,55 +1996,6 @@ tarball from perl.org.
 %patch45 -p1
 %patch46 -p1
 
-%if !%{defined perl_bootstrap}
-# Local patch tracking
-perl -x patchlevel.h \
-    'Fedora Patch1: Removes date check, Fedora/RHEL specific' \
-%ifarch %{multilib_64_archs} \
-    'Fedora Patch3: support for libdir64' \
-%endif \
-    'Fedora Patch4: use libresolv instead of libbind' \
-    'Fedora Patch5: USE_MM_LD_RUN_PATH' \
-    'Fedora Patch6: Skip hostname tests, due to builders not being network capable' \
-    'Fedora Patch7: Dont run one io test due to random builder failures' \
-    'Fedora Patch9: Fix find2perl to translate ? glob properly (RT#113054)' \
-    'Fedora Patch10: Fix broken atof (RT#109318)' \
-    'Fedora Patch13: Clear $@ before "do" I/O error (RT#113730)' \
-    'Fedora Patch14: Do not truncate syscall() return value to 32 bits (RT#113980)' \
-    'Fedora Patch15: Override the Pod::Simple::parse_file (CPANRT#77530)' \
-    'Fedora Patch16: Do not leak with attribute on my variable (RT#114764)' \
-    'Fedora Patch17: Allow operator after numeric keyword argument (RT#105924)' \
-    'Fedora Patch18: Extend stack in File::Glob::glob, (RT#114984)' \
-    'Fedora Patch19: Do not crash when vivifying $|' \
-    'Fedora Patch20: Fix misparsing of maketext strings (CVE-2012-6329)' \
-    'Fedora Patch21: Add NAME headings to CPAN modules (CPANRT#73396)' \
-    'Fedora Patch22: Fix leaking tied hashes (RT#107000) [1]' \
-    'Fedora Patch23: Fix leaking tied hashes (RT#107000) [2]' \
-    'Fedora Patch24: Fix leaking tied hashes (RT#107000) [3]' \
-    'Fedora Patch25: Fix dead lock in PerlIO after fork from thread (RT#106212)' \
-    'Fedora Patch26: Make regexp safe in a signal handler (RT#114878)' \
-    'Fedora Patch27: Update h2ph(1) documentation (RT#117647)' \
-    'Fedora Patch28: Update pod2html(1) documentation (RT#117623)' \
-    'Fedora Patch29: Document Math::BigInt::CalcEmu requires Math::BigInt (CPAN RT#85015)' \
-    'RHEL Patch30: Use stronger algorithm needed for FIPS in t/op/crypt.t (RT#121591)' \
-    'RHEL Patch31: Make *DBM_File desctructors thread-safe (RT#61912)' \
-    'RHEL Patch32: Use stronger algorithm needed for FIPS in t/op/taint.t (RT#123338)' \
-    'RHEL Patch33: Remove CPU-speed-sensitive test in Benchmark test' \
-    'RHEL Patch34: Make File::Glob work with threads again' \
-    'RHEL Patch35: Fix CRLF conversion in ASCII FTP upload (CPAN RT#41642)' \
-    'RHEL Patch36: Do not leak the temp utf8 copy of namepv (CPAN RT#123786)' \
-    'RHEL Patch37: Fix duplicating PerlIO::encoding when spawning threads (RT#31923)' \
-    'RHEL Patch38: Add SSL support to Net::SMTP (CPAN RT#93823) [1]' \
-    'RHEL Patch39: Add SSL support to Net::SMTP (CPAN RT#93823) [2]' \
-    'RHEL Patch40: Add SSL support to Net::SMTP (CPAN RT#93823) [3]' \
-    'RHEL Patch41: Add SSL support to Net::SMTP (CPAN RT#93823) [4]' \
-    'RHEL Patch42: Do not overload ".." in Math::BigInt (CPAN RT#80182)' \
-    'RHEL Patch43: Fix CVE-2018-18311 Integer overflow leading to buffer overflow' \
-    'RHEL Patch44: Fix a spurious timeout in Net::FTP::close (CPAN RT#18504)' \
-    'RHEL Patch45: Fix day of year parsing (CPAN RT#88211)' \
-    %{nil}
-%endif
-
 #copy the example script
 install -m 0644 %{SOURCE5} .
 

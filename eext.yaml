@@ -1,0 +1,11 @@
+---
+package:
+  - name: perl
+    upstream-sources:
+      - full-url: file:///perl-5.16.3-297.el7.src.rpm
+        signature:
+          skip-check: true
+    type: srpm
+    build:
+      repo-bundle:
+        - name: el7
