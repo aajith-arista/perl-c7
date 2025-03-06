@@ -1,0 +1,11 @@
+---
+# yamllint disable rule:line-length
+repo-bundle:
+# --------------------------------------------------------------------------------------------
+  el7:
+    baseurl: "https://el7.repo.almalinux.org/centos/7.9.2009/{{.RepoName}}/{{.Arch}}/Packages"
+    repo:
+      os:
+        enabled: true
+      updates:
+        enabled: true
