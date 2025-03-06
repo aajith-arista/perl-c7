@@ -3,9 +3,10 @@
 repo-bundle:
 # --------------------------------------------------------------------------------------------
   el7:
-    baseurl: "https://el7.repo.almalinux.org/centos/7.9.2009/{{.RepoName}}/{{.Arch}}/Packages"
+    baseurl: "https://el7.repo.almalinux.org/centos/7.9.2009/{{.RepoName}}/{{.Arch}}"
     repo:
       os:
         enabled: true
       updates:
         enabled: true
+    priority: 2
