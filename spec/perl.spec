@@ -2052,6 +2052,9 @@ echo "RPM Build arch: %{_arch}"
 # - /usr/share/perl5                  -- Fedora       (priv lib)
 # - /usr/lib[64]/perl5                -- Fedora       (arch lib)
 
+%global _prefix /opt
+%global _mandir /opt/man
+
 %global privlib     %{_prefix}/share/perl5
 %global archlib     %{_libdir}/perl5
 
