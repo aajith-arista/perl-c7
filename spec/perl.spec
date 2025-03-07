@@ -28,7 +28,7 @@
 # We can skip %%check phase
 %bcond_without test
 
-Name:           perl
+Name:           hsdk-perl
 Version:        %{perl_version}
 # release number must be even higher, because dual-lived modules will be broken otherwise
 Release:        297%{?dist}
